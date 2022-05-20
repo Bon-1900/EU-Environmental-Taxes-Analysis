@@ -1,10 +1,19 @@
-# COMP0034 CW2 Group 3
+# An EU environmental taxes analysis website
 
-## An EU environmental taxes analysis website
+## COMP0034 CW2 Group 3
 
-## App location: my_app/app.py 
- 
-## References :
+## Contributor:
+- Aly Nour
+- Isabella Miglioli
+- Natasha Tahir
+- Yuansheng Zhang (Jason)
+
+## Usage
+1) Make sure you have downloaded the linked data in SQLite database.
+2) To start the web app, run my_app/app.py. 
+
+
+## References:
 
 Gandy, D., 2021. User icon - Free download on Iconfinder. [online] Iconfinder. Available at: <https://www.iconfinder.com/icons/1608727/user_icon> [Accessed 15 April 2021].
 
