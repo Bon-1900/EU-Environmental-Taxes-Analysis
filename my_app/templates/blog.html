@@ -1,0 +1,33 @@
+{# Aly Nour & Isabella Dube-Miglioli #}
+
+{% extends 'layout.html' %}
+{% set title = 'Blog' %}
+{% from "formhelpers.html" import render_field %}
+{% block content %}
+    <form method="POST" action="" enctype="multipart/form-data">
+
+        {{ form.csrf_token }}
+
+        <dl>
+            <br>
+            <h1 class="blog-title">Welcome to the blog!</h1>
+            <br>
+            {{ form.answer_1.label }} <br> {{ form.answer_1() }} <br> <br>
+            {{ form.answer_2.label }} <br> {{ form.answer_2() }} <br> <br>
+            {{ form.answer_3.label }} <br> {{ form.answer_3() }} <br> <br>
+            {{ form.answer_4.label }} <br> {{ form.answer_4() }} <br> <br>
+        </dl>
+
+        <button type="submit" class="btn btn-primary">Save</button>
+
+    </form>
+
+    {# Display the form validation errors #}
+    {% for field, errors in form.errors.items() %}
+        <div class="alert alert-error">
+            {{ form[field].label }}: {{ ', '.join(errors) }}
+        </div>
+    {% endfor %}
+{% endblock %}
+
+

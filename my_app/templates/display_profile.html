@@ -1,0 +1,21 @@
+{# Aly Nour & Isabella Dube-Miglioli #}
+
+{%  extends 'layout.html' %}
+{% set title = 'Profile Display' %}
+{% from "formhelpers.html" import render_field %}
+{% block content %}
+    {% for result, url in profiles %}
+        <div class="col d-flex justify-content-center">
+            <div class="card" style="width: 20rem;">
+                <img class="card-img-top" src="{{ url }}" alt="User profile photo">
+                <div class="card-body">
+                    <h5 class="card-title">{{ result.username }}</h5>
+                    <h6>{{ result.age }}</h6>
+                    <h6>{{ result.region }}</h6>
+                    <p class="card-text">{{ result.bio }}</p>
+                </div>
+            </div>
+        </div>
+        <br>
+    {% endfor %}
+{% endblock %}

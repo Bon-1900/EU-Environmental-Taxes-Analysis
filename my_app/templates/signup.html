@@ -1,0 +1,35 @@
+{# Aly Nour & Isabella Dube-Miglioli #}
+
+{% extends 'layout.html' %}
+{% from "formhelpers.html" import render_field %}
+{% block content %}
+    <body>
+    <form method="POST" action="{{ url_for('auth.signup') }}">
+        <div class="col-md-12 text-center">
+            <h1>Signup</h1>
+
+
+            {{ form.csrf_token }}
+            {{ form.title.label }} <br> {{ form.title() }} <br>
+            {{ form.first_name.label }} <br> {{ form.first_name() }} <br>
+            {{ form.last_name.label }} <br> {{ form.last_name() }} <br>
+            {{ form.email.label }}<br> {{ form.email() }} <br>
+            {{ form.password.label }} <br>{{ form.password() }} <br>
+            {{ form.password_repeat.label }}<br> {{ form.password_repeat() }} <br>
+            {{ form.security_question.label }} <br> {{ form.security_question() }} <br>
+            {{ form.security_answer.label }} <br> {{ form.security_answer() }} <br>
+
+            <br>
+            <input type="submit" value="Sign up">
+        </div>
+    </form>
+
+    </body>
+    {# Display the form validation errors #}
+    {% for field, errors in form.errors.items() %}
+        <div class="alert alert-error">
+            {{ form[field].label }}: {{ ', '.join(errors) }}
+        </div>
+    {% endfor %}
+
+{% endblock %}

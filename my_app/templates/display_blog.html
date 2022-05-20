@@ -1,0 +1,39 @@
+{# Aly Nour & Isabella Dube-Miglioli #}
+
+{% extends 'layout.html' %}
+{% set title = 'Blog Display' %}
+{% from "formhelpers.html" import render_field %}
+{% block content %}
+    <div class="col d-flex justify-content-md-center">
+        <form class="d-flex" action="{{ url_for("community_bp.display_blogs") }}" method="post" style="width: 32rem;">
+                        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+                        <input class="form-control me-2" type="search" placeholder="Search for an existing opinion" aria-label="Search" name="search_term">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+    </div>
+    <br>
+    <div class = "col d-flex justify-content-center">
+        <div class="card" style="width: 32rem;">
+            <form method="POST" action="" enctype="multipart/form-data">
+
+                {{ form.csrf_token }}
+                <dl>
+                    <br>
+                    <h1>Opinion</h1>
+                    <br>
+                    <h6>{{ render_field(form.answer_1, class="form-control") }}</h6>
+                    <br>
+                    <h6>{{ render_field(form.answer_2, class="form-control") }}</h6>
+                    <br>
+                    <h6>{{ render_field(form.answer_3, class="form-control") }}</h6>
+                    <br>
+                    <h6>{{ render_field(form.answer_4, class="form-control") }}</h6>
+                </dl>
+                <br>
+                <button type="submit" class="btn btn-primary">Save</button>
+                <td><a href="{{ url_for("community_bp.display_blogs") }}">Show all opinions</a></td><br>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
