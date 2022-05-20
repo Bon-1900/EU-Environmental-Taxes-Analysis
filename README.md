@@ -1,6 +1,6 @@
 # An EU environmental taxes analysis website
 
-## COMP0034 CW2 Group 3
+**COMP0034 CW2 Group 3**
 
 ## Contributor:
 - Aly Nour
